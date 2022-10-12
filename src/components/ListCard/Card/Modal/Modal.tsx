@@ -1,6 +1,7 @@
 import { ChangeEvent, FC, useState } from "react";
 import { useNavigate } from "react-router";
-import { ListCardType } from "../App";
+import { ListCardType } from "../../../../App";
+
 import styles from "./Modal.module.css";
 interface IProps {
   active: boolean;

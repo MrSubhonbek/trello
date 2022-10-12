@@ -1,7 +1,7 @@
 import { ChangeEvent, FC, useState } from "react";
-import { ListCardType } from "../App";
-import { Cancel } from "../asset/icons/Cancel";
-import { Plus } from "../asset/icons/Plus";
+import { ListCardType } from "../../App";
+import { Cancel } from "../../asset/icons/Cancel";
+import { Plus } from "../../asset/icons/Plus";
 import styles from "./ActionButton.module.css";
 interface IProps {
   list?: boolean;

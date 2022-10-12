@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { CardType, ListCardType } from "../App";
-import { ActionButton } from "./ActionButton";
-import { Card } from "./Card";
+import { CardType, ListCardType } from "../../App";
+import { ActionButton } from "../ActionButton/ActionButton";
+import { Card } from "./Card/Card";
 import styles from "./ListCard.module.css";
 
 interface IProps {

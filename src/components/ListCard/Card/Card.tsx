@@ -1,8 +1,8 @@
 import { FC, useState } from "react";
 import { useNavigate } from "react-router";
-import { ListCardType } from "../App";
+import { ListCardType } from "../../../App";
 import styles from "./Card.module.css";
-import { Modal } from "./Modal";
+import { Modal } from "./Modal/Modal";
 
 interface IProps {
   text: string;
