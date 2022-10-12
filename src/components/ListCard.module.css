@@ -1,0 +1,24 @@
+.container {
+  background-color: #dfe3e6;
+  border-radius: 3px;
+  width: 316px;
+  padding: 8px;
+  margin-right: 8px;
+  box-sizing: border-box;
+  height: 100%;
+}
+.button {
+  outline: none;
+  border: none;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-top: 8px;
+  cursor: pointer;
+  height: min-content;
+}
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}

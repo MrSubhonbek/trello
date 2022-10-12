@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { ListCard } from "./components/ListCard";
+import styles from "./App.module.css";
+import { ActionButton } from "./components/ActionButton";
+import { BrowserRouter } from "react-router-dom";
+export type CardType = {
+  text: string;
+  id: number;
+};
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+export type ListCardType = {
+  title: string;
+  id: number;
+  cards: Array<CardType>;
+};
+export const App = () => {
+  const [data, setData] = useState<Array<ListCardType>>(
+    // @ts-ignore
+    JSON.parse(localStorage.getItem("lists")) || []
   );
-}
 
-export default App;
+  useEffect(() => {
+    localStorage.setItem("lists", JSON.stringify(data));
+    window.addEventListener("storage", () => {
+      window.location.reload();
+    });
+  }, [data]);
+
+  const handleShowList = data.map((list) => {
+    return (
+      <ListCard
+        key={list.id}
+        listId={list.id}
+        title={list.title}
+        cards={list.cards}
+        data={data}
+        setData={setData}
+      />
+    );
+  });
+
+  return (
+    <BrowserRouter>
+      <div className={styles.listContainer}>
+        {handleShowList}
+        <ActionButton list data={data} setData={setData} />
+      </div>
+    </BrowserRouter>
+  );
+};
