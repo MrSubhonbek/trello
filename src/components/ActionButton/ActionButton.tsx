@@ -75,7 +75,12 @@ export const ActionButton: FC<IProps> = ({ list, setData, data, listId }) => {
           >
             {buttonTitle}
           </button>
-          <div className={styles.icon}>
+          <div
+            onClick={() => {
+              setFormOpen(false);
+            }}
+            className={styles.icon}
+          >
             <Cancel />
           </div>
         </div>
